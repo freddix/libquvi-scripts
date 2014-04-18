@@ -1,11 +1,11 @@
 Summary:	Embedded lua scripts that libquvi uses for parsing the media details
 Name:		libquvi-scripts
-Version:	0.4.9
+Version:	0.9.20131130
 Release:	1
 License:	LGPL v2.1+
 Group:		Applications
 Source0:	http://downloads.sourceforge.net/quvi/%{name}-%{version}.tar.xz
-# Source0-md5:	a7f3dad2e2809857e876726813bba1be
+# Source0-md5:	46ddfd887260a515199c2e1ba8c46d8a
 URL:		http://quvi.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -24,6 +24,8 @@ parsing the media details.
 %{__autoconf}
 %{__automake}
 %configure \
+	--host=%{_host}		\
+	--build=%{_build}	\
 	--disable-silent-rules	\
 	--with-nlfy		\
 	--with-nsfw
@@ -43,6 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %{_datadir}/%{name}
-%{_mandir}/man7/libquvi-scripts.7*
-%{_npkgconfigdir}/libquvi-scripts.pc
+%{_mandir}/man7/*quvi*.7*
+%{_npkgconfigdir}/libquvi-scripts-0.9.pc
 
